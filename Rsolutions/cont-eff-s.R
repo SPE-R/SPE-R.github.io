@@ -35,6 +35,10 @@ fit.Ns5 <- predict( mNs5, newdata=nd, interval="conf" )
 pred.Ns5 <- predict( mNs5, newdata=nd, interval="pred" )
 par(mfrow=c(1,1))
 with(births, plot(bweight ~ gestwks, xlim=c(23, 46),cex.axis= 1.5,cex.lab = 1.5 ) )
+# matshade gives you semitransparent areas
+matshade( nd$gestwks, fit.Ns5, lwd=2, alpha=0.2 )
+matshade( nd$gestwks, pred.Ns5, lwd=2, alpha=0.2 )
+# matlines puts lines for the intervals
 matlines( nd$gestwks, fit.Ns5, lty=1, lwd=c(3,2,2), col=c('red','blue','blue') )
 matlines( nd$gestwks, pred.Ns5, lty=1, lwd=c(3,2,2), col=c('red','green','green') )
 
@@ -49,13 +53,15 @@ plot(mNs5)
 ###################################################
 ### code chunk number 6: bweigth-gestwks-Ns10
 ###################################################
-mNs10 <- lm( bweight ~ Ns( gestwks, 
-        knots = seq(25, 43, by = 2)), data = births)
+mNs10 <- lm( bweight ~ Ns( gestwks, knots = seq(25, 43, by = 2)), 
+             data = births)
 round(ci.lin(mNs10)[ , c(1,5,6)], 1)
 fit.Ns10 <- predict( mNs10, newdata=nd, interval="conf" )
 pred.Ns10 <- predict( mNs10, newdata=nd, interval="pred" )
 par(mfrow=c(1,1))
 with( births, plot( bweight ~ gestwks, xlim = c(23, 46), cex.axis= 1.5, cex.lab = 1.5 )  )
+matshade( nd$gestwks, fit.Ns10, lwd=2, alpha=0.2 )
+matshade( nd$gestwks, pred.Ns10, lwd=2, alpha=0.2 )
 matlines( nd$gestwks, fit.Ns10, lty=1, lwd=c(3,2,2), col=c('red','blue','blue') )
 matlines( nd$gestwks, pred.Ns10, lty=1, lwd=c(3,2,2), col=c('red','green','green') )
 
@@ -81,13 +87,20 @@ sqrt(mPs$sig2)
 pr.Ps <- predict( mPs, newdata=nd, se.fit=TRUE)
 par(mfrow=c(1,1))
 with(births, plot(bweight ~ gestwks, xlim=c(24, 45), cex.axis=1.5, cex.lab=1.5) )
+matshade( nd$gestwks, cbind(pr.Ps$fit, 
+                            pr.Ps$fit - 2*pr.Ps$se.fit, 
+                            pr.Ps$fit + 2*pr.Ps$se.fit), lwd=2 )
+matshade( nd$gestwks, cbind(pr.Ps$fit,
+                            pr.Ps$fit - 2*sqrt( pr.Ps$se.fit^2 + mPs$sig2), 
+                            pr.Ps$fit + 2*sqrt( pr.Ps$se.fit^2 + mPs$sig2)), lwd=2 )
 matlines( nd$gestwks, cbind(pr.Ps$fit, 
-  pr.Ps$fit - 2*pr.Ps$se.fit, pr.Ps$fit + 2*pr.Ps$se.fit),  
-  lty=1, lwd=c(3,2,2), col=c('red','blue','blue') )
+                            pr.Ps$fit - 2*pr.Ps$se.fit, 
+                            pr.Ps$fit + 2*pr.Ps$se.fit),  
+          lty=1, lwd=c(3,2,2), col=c('red','blue','blue') )
 matlines( nd$gestwks, cbind(pr.Ps$fit, 
-  pr.Ps$fit - 2*sqrt( pr.Ps$se.fit^2 + mPs$sig2), 
-  pr.Ps$fit + 2*sqrt( pr.Ps$se.fit^2 + mPs$sig2)),  
-  lty=1, lwd=c(3,2,2), col=c('red','green','green')  )
+                            pr.Ps$fit - 2*sqrt( pr.Ps$se.fit^2 + mPs$sig2), 
+                            pr.Ps$fit + 2*sqrt( pr.Ps$se.fit^2 + mPs$sig2)),  
+          lty=1, lwd=c(3,2,2), col=c('red','green','green')  )
 
 
 ###################################################
@@ -104,10 +117,11 @@ matlines( nd$gestwks, cbind(pr.Ps$fit,
 ### code chunk number 11: housekeeping
 ###################################################
 tdk <- subset(testisDK, A > 14 & A < 80)
-tdk$Age <- cut(tdk$A, br = 5*(3:16), include.lowest=TRUE, right=FALSE)
+tdk$Age <- cut(tdk$A, br = 5*(3:16), 
+               include.lowest=TRUE, right=FALSE)
 nAge <- length(levels(tdk$Age))
 tdk$Per <- cut(tdk$P, br = seq(1943, 1998, by = 5),   
-     include.lowest=TRUE, right=FALSE)
+               include.lowest=TRUE, right=FALSE)
 nPer <- length(levels(tdk$Per))
 
 
@@ -115,9 +129,10 @@ nPer <- length(levels(tdk$Per))
 ### code chunk number 12: tabulation
 ###################################################
 tab <- stat.table(  index = list(Age, Per),
-                 contents = list(D = sum(D), Y = sum(Y/1000),
+                 contents = list(D = sum(D), 
+                                 Y = sum(Y/1000),
                               rate = ratio(D, Y, 10^5) ),
-     margins = TRUE, data = tdk )										
+     margins = TRUE, data = tdk ) 
 print(tab, digits=c(sum=0, ratio=1))	
 
 
@@ -134,14 +149,23 @@ for (p in 1:nPer)
 
 
 ###################################################
-### code chunk number 14: mCat
+### code chunk number 14: rateplot
+###################################################
+par( mfrow=c(1,1) )
+rateplot( tab[3,1:nAge,1:nPer], "ap", ylim=c(1,30),
+          age = seq(15,75,5), per=seq(1943,1993,5),
+          col=heat.colors(16), ann=TRUE )
+
+
+###################################################
+### code chunk number 15: mCat
 ###################################################
 mCat <- glm( D ~ Age + Per, offset=log(Y/100000), family=poisson, data= tdk )
 round( ci.exp( mCat ), 2)
 
 
 ###################################################
-### code chunk number 15: mCat-est
+### code chunk number 16: mCat-est
 ###################################################
 aMid <- seq(17.5, 77.5, by = 5)
 pMid <- seq(1945, 1995, by = 5)
@@ -157,7 +181,7 @@ segments( pMid[-1],  ci.exp(mCat)[14:23, 2], pMid[-1], ci.exp(mCat)[14:23, 3] )
 
 
 ###################################################
-### code chunk number 16: mCat2-new-ref
+### code chunk number 17: mCat2-new-ref
 ###################################################
 tdk$Per70 <- Relevel(tdk$Per, ref = 6)
 mCat2 <- glm( D ~ -1 + Age +Per70, offset=log(Y/100000), family=poisson, data= tdk )
@@ -165,7 +189,7 @@ round( ci.exp( mCat2 ), 2)
 
 
 ###################################################
-### code chunk number 17: mCat2-plot
+### code chunk number 18: mCat2-plot
 ###################################################
 par(mfrow=c(1,2))
 plot( c(15,80), c(2, 20), type='n', log='y', cex.lab = 1.5, cex.axis = 1.5, 
@@ -178,7 +202,7 @@ lines( pMid, c(ci.exp(mCat2)[14:18, 1], 1, ci.exp(mCat2)[19:23, 1]),
 
 
 ###################################################
-### code chunk number 18: mPen
+### code chunk number 19: mPen
 ###################################################
 library(mgcv)
 mPen <- gam( D ~ s(A) + s(P), offset = log(Y/100000), 
@@ -187,7 +211,7 @@ summary(mPen)
 
 
 ###################################################
-### code chunk number 19: mPen-plot
+### code chunk number 20: mPen-plot
 ###################################################
 par(mfrow=c(1,2))
 plot(mPen, seWithMean=TRUE)
@@ -196,13 +220,13 @@ abline(h = 0, lty=3)
 
 
 ###################################################
-### code chunk number 20: mPen-check
+### code chunk number 21: mPen-check
 ###################################################
 gam.check(mPen)					
 
 
 ###################################################
-### code chunk number 21: mPen2
+### code chunk number 22: mPen2
 ###################################################
 mPen2 <- gam( D ~ s(A, k=20) + s(P), offset = log(Y/100000), 
            family = poisson, data = tdk)
@@ -211,7 +235,7 @@ gam.check(mPen2)
 
 
 ###################################################
-### code chunk number 22: mPen2-plot
+### code chunk number 23: mPen2-plot
 ###################################################
 par(mfrow=c(1,2))
 plot(mPen2, seWithMean=TRUE)
@@ -220,40 +244,58 @@ abline(h = 0, lty=3)
 
 
 ###################################################
-### code chunk number 23: mPen2-plotAge
+### code chunk number 24: mPen2-plotAge
 ###################################################
 source("http://bendixcarstensen.com/SPE/R/plotPenSplines.R")
 
 
 ###################################################
-### code chunk number 24: mNs
+### code chunk number 25: mNs
 ###################################################
 mNs <- glm( D ~ Ns(A, knots = seq(15, 75, 10)) +
-                  Ns(P, knots = seq(50, 90, 10)),
-                  offset=log(Y), family=poisson, data=tdk )
+                Ns(P, knots = seq(1950, 1990, 10)),
+                offset=log(Y), family=poisson, data=tdk )
 summary( mNs)
 
 
 ###################################################
-### code chunk number 25: mNs10-plot
+### code chunk number 26: cont-eff-s.rnw:457-473
 ###################################################
+summary( mNs )
 aa <- 15:79
 pp <- 1943:1996
-As <- Ns( aa, knots=seq(15, 75, 10) )
-Ps <- Ns( pp, knots=seq(1950, 1990, 10) )
-Ar <- Ns( rep(70, length(aa)), knots=seq(50, 90, 10) )
-Pr <- Ns( rep(1970, length(pp)), knots=seq(1950, 1990, 10) )
+# for the prediction
+ndp <- data.frame( A=aa, P=1970, Y=10^5 )
+# for the RR between pp and 1970
+ndx <- data.frame( A=50, P=pp  , Y=10^5 )
+ndr <- data.frame( A=50, P=1970, Y=10^5 )
 par(mfrow=c(1,2))
-matplot( aa, ci.exp( mNs, ctr.mat =cbind(1, As, Ar) )*10^5,
+matplot( aa, ci.pred( mNs, ndp ),
           log="y", xlab="Age", ylab="Incidence rate (per 100000 y)",
           type="l", lty=1, lwd=c(3,1,1), col = c("red", "blue",  "blue") )
-matplot( pp, ci.exp( mNs, ctr.mat = Ps - Pr, subset="P" ),
+matplot( pp, ci.exp( mNs, list(ndx,ndr) ),
           log="y", xlab="Year", ylab="Rate ratio",
           type="l", lty=1, lwd=c(3,1,1), col= c("red", "blue",  "blue") )
+abline( h=1,v=1970)
 
 
 ###################################################
-### code chunk number 26: all items
+### code chunk number 27: gamNs
+###################################################
+par(mfrow=c(1,2))
+matplot( ndp$A, ci.pred( mNs, ndp ),
+          log="y", xlab="Age", ylab="Incidence rate (per 100000 y)",
+          type="l", lty=1, lwd=c(3,1,1), col = c("red", "blue",  "blue") )
+matshade( ndp$A, ci.pred( mPen2, ndp ), lwd=2, lty=3 )
+matplot( ndx$P, ci.exp( mNs, list(ndx,ndr) ),
+          log="y", xlab="Year", ylab="Rate ratio",
+          type="l", lty=1, lwd=c(3,1,1), col= c("red", "blue",  "blue") )
+matshade( ndx$P, ci.exp( mPen2, list(ndx,ndr) ), lwd=2, lty=3 )
+abline( h=1,v=1970)
+
+
+###################################################
+### code chunk number 28: all items
 ###################################################
  a.kn <- seq(15,75,10)
  p.kn <- seq(50,90,10)
@@ -282,7 +324,7 @@ matplot( pp, ci.exp( mNs, ctr.mat = Ps - Pr, subset="P" ),
 
 
 ###################################################
-### code chunk number 27: Age-cohort
+### code chunk number 29: Age-cohort
 ###################################################
  tdk <- transform( tdk, B = P-A )
  # with( testisDK, hist( rep(B,D), breaks=100, col="black" ) )
