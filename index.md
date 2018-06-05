@@ -5,7 +5,7 @@ description: main page data
 toc: true
 ---
 
-## SPE course material
+# SPE course material
 
 Latest version of 2018 SPE course data and material could be found here:
 
@@ -17,10 +17,10 @@ Latest version of 2018 SPE course data and material could be found here:
 
 All the material could be downloaded as a single `.zip` file [here](https://github.com/SPE-R/SPE-R.github.io/archive/travis-build.zip)
 
-----
+
+# SPE stable website
 
 Site under construction. Please visit <a href="http://bendixcarstensen.com/SPE/">SPE stable website</a>
 
-----
 
 

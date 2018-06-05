@@ -1,7 +1,8 @@
 body {
 	font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    margin: 60px auto;
-    width: 70%;
+	font-size: 12px;
+  margin: 60px auto;
+  width: 70%;
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
@@ -15,8 +16,9 @@ nav ul li, footer ul li {
 }
 a {
 	font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    text-decoration: none;
-    color: #999;
+	font-size: 18px;
+  text-decoration: none;
+  color: #999;
 }
 a:hover {
     text-decoration: underline;
