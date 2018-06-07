@@ -17,6 +17,9 @@ Latest version of 2018 SPE course data and material could be found here:
 
   - **practicals solutions** ([view](https://github.com/SPE-R/SPE-R.github.io/tree/travis-build/Rsolutions) - 
   [download](https://github.com/SPE-R/SPE-R.github.io/raw/travis-build/Rsolutions.zip)): R files containing practicals solutions
+  
+  - **lectures slides handout** ([view](https://github.com/SPE-R/SPE-R.github.io/blob/travis-build/SPE-2018-lectures-3x1.pdf) - 
+  [download](https://github.com/SPE-R/SPE-R.github.io/raw/travis-build/SPE-2018-lectures-3x1.pdf)): SPE lectures slides (3x1 layout)
 
 All the material could be downloaded as a single `.zip` file [here](https://github.com/SPE-R/SPE-R.github.io/blob/travis-build/SPE-all-material.zip)
 
