@@ -12,10 +12,13 @@ Latest version of 2018 SPE course data and material could be found here:
   - **practicals booklet** ([view](https://github.com/SPE-R/SPE-R.github.io/blob/travis-build/pracs.pdf) - 
   [download](https://github.com/SPE-R/SPE-R.github.io/raw/travis-build/pracs.pdf)): the pdf file that compile all the workshop practicals
 
+  - **practicals booklet with solutions** ([view](https://github.com/SPE-R/SPE-R.github.io/blob/travis-build/pracs-sol.pdf) - 
+  [download](https://github.com/SPE-R/SPE-R.github.io/raw/travis-build/pracs-sol.pdf)): the pdf file that compile all the workshop practicals
+
   - **practicals data** ([view](https://github.com/SPE-R/SPE-R.github.io/tree/travis-build/data) - 
   [download](https://github.com/SPE-R/SPE-R.github.io/raw/travis-build/data.zip)): data and functions used in practicals
 
-  - **practicals solutions** ([view](https://github.com/SPE-R/SPE-R.github.io/tree/travis-build/Rsolutions) - 
+  - **R practicals solutions** ([view](https://github.com/SPE-R/SPE-R.github.io/tree/travis-build/Rsolutions) - 
   [download](https://github.com/SPE-R/SPE-R.github.io/raw/travis-build/Rsolutions.zip)): R files containing practicals solutions
   
   - **lectures slides handout** ([view](https://github.com/SPE-R/SPE-R.github.io/blob/travis-build/SPE-2018-lectures-3x1.pdf) - 
