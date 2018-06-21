@@ -25,7 +25,6 @@ Latest version of 2018 SPE course data and material could be found here:
 
 
 ## Lectures
-  
 
   - **lectures slides handout** ([view](https://github.com/SPE-R/SPE-R.github.io/blob/travis-build/SPE-2018-lectures-3x1.pdf) - 
   [download](https://github.com/SPE-R/SPE-R.github.io/raw/travis-build/SPE-2018-lectures-3x1.pdf)): SPE lectures slides (3x1 layout)
