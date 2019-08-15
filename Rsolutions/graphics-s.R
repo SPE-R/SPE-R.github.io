@@ -80,5 +80,6 @@ mtext(available[2,],side=1, line=6, at=time)
 mtext("Placebo"  , side=1, line=5, adj=1, at=par("usr")[1] )
 mtext("Tamoxifen", side=1, line=6, adj=1, at=par("usr")[1] )
 abline(h=0) # Horizontal line
+axis( side=2, at=seq(-25,15,5), labels=NA, tcl=-0.3 )
 
 

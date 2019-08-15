@@ -259,7 +259,7 @@ summary( mNs)
 
 
 ###################################################
-### code chunk number 26: cont-eff-s.rnw:457-473
+### code chunk number 26: predRR
 ###################################################
 summary( mNs )
 aa <- 15:79
@@ -269,6 +269,12 @@ ndp <- data.frame( A=aa, P=1970, Y=10^5 )
 # for the RR between pp and 1970
 ndx <- data.frame( A=50, P=pp  , Y=10^5 )
 ndr <- data.frame( A=50, P=1970, Y=10^5 )
+ci.pred( mPen2, data.frame( A=aa, P=1970 ) )
+ci.exp( mPen2, list( data.frame( P=pp ),
+                     data.frame( P=1970 ) ), xvars='A' )[1:5,]
+ci.exp( mNs, list( data.frame( P=pp ),
+                   data.frame( P=1970 ) ), xvars="A" )[1:5,]
+ci.pred( mNs, ndp )
 par(mfrow=c(1,2))
 matplot( aa, ci.pred( mNs, ndp ),
           log="y", xlab="Age", ylab="Incidence rate (per 100000 y)",
