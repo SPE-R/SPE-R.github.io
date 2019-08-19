@@ -192,46 +192,7 @@ summary(m2fg2, Exp=T)
 
 
 ###################################################
-### code chunk number 23: test
-###################################################
-library(popEpi)
-head(sibr)
-
-
-###################################################
-### code chunk number 24: test
-###################################################
-## pretend some are male
-set.seed(1L)
-sire$sex <- rbinom(nrow(sire), 1, 0.01)
-
-BL <- list(fot = seq(0, 5, 1/12))
-
-x <- lexpand(sire,
-             birth = bi_date,
-             entry = dg_date,
-             exit = ex_date,
-             status = status,
-             breaks = BL,
-             pophaz = popmort,
-             aggre = list(sex, fot))
-
-
-###################################################
-### code chunk number 25: test
-###################################################
-
-st.e2 <- survtab_ag(fot ~ sex, data = x,
-                    surv.type = "surv.rel",
-                    pyrs = "pyrs", n.cens = "from0to0",
-                    d = c("from0to1", "from0to2"))
-
-plot(st.e2, y = "r.e2", col = c("black", "red"),lwd=4)
-
-
-
-###################################################
-### code chunk number 26: lexis
+### code chunk number 23: lexis
 ###################################################
 orca.lex <- Lexis(exit = list(stime = time),
            exit.status = factor(event,
@@ -241,7 +202,7 @@ summary(orca.lex)
 
 
 ###################################################
-### code chunk number 27: split
+### code chunk number 24: split
 ###################################################
 orca2.lex <- subset(orca.lex, stage != "unkn" )
 orca2.lex$st3 <- Relevel( orca2$stage, list(1:2, 3, 4:5) )
@@ -249,7 +210,7 @@ levels(orca2.lex$st3) = c("I-II", "III", "IV")
 
 
 ###################################################
-### code chunk number 28: split
+### code chunk number 25: split
 ###################################################
 cuts <- sort(orca2$time[orca2$event==1])
 orca2.spl <- splitLexis( orca2.lex, br = cuts, time.scale="stime" )
@@ -257,14 +218,14 @@ orca2.spl$timeband <- as.factor(orca2.spl$stime)
 
 
 ###################################################
-### code chunk number 29: strsplit
+### code chunk number 26: strsplit
 ###################################################
 str(orca2.spl)
 orca2.spl[ 1:20, ]
 
 
 ###################################################
-### code chunk number 30: poisson
+### code chunk number 27: poisson
 ###################################################
 m2pois1 <- glm( 1*(lex.Xst=="Oral ca. death")  ~
       -1 + timeband + sex + I((age-65)/10) + st3,
@@ -272,7 +233,7 @@ m2pois1 <- glm( 1*(lex.Xst=="Oral ca. death")  ~
 
 
 ###################################################
-### code chunk number 31: poissonresults
+### code chunk number 28: poissonresults
 ###################################################
 tb <- as.numeric(levels(orca2.spl$timeband)) ; ntb <- length(tb)
 tbmid <- (tb[-ntb] + tb[-1])/2   # midpoints of the intervals
@@ -283,7 +244,7 @@ plot( tbmid, 1000*exp(coef(m2pois1)[1:(ntb-1)]),
 
 
 ###################################################
-### code chunk number 32: poissonspline
+### code chunk number 29: poissonspline
 ###################################################
 library(splines)
 m2pspli <- update(m2pois1, . ~  ns(stime, df = 6, intercept = F) +
