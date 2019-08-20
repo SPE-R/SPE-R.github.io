@@ -56,7 +56,7 @@ grepl('r', 'spe-r')
 
 
 ###################################################
-### code chunk number 7: dplyr-s.rnw:95-109
+### code chunk number 7: dplyr-s.rnw:106-120
 ###################################################
 births_tbl <-
   births_tbl %>%
@@ -75,7 +75,7 @@ births_tbl
 
 
 ###################################################
-### code chunk number 8: dplyr-s.rnw:117-122
+### code chunk number 8: dplyr-s.rnw:130-135
 ###################################################
 births_tbl %>%
   ## select only id, women age group, sex and birth weight of the baby
@@ -85,7 +85,7 @@ births_tbl %>%
 
 
 ###################################################
-### code chunk number 9: dplyr-s.rnw:127-137
+### code chunk number 9: dplyr-s.rnw:143-153
 ###################################################
 births_tbl %>%
   ## select only id, women age group, sex and birth weight of the baby
@@ -100,7 +100,7 @@ births_tbl %>%
 
 
 ###################################################
-### code chunk number 10: dplyr-s.rnw:143-153
+### code chunk number 10: dplyr-s.rnw:160-170
 ###################################################
 births_tbl %>%
   ## select only id, women age group, sex and birth weight of the baby
@@ -115,7 +115,7 @@ births_tbl %>%
 
 
 ###################################################
-### code chunk number 11: dplyr-s.rnw:164-172
+### code chunk number 11: dplyr-s.rnw:181-190
 ###################################################
 births.01 <-
   births_tbl %>%
@@ -125,10 +125,11 @@ births.01 <-
   summarise(
     count = n()
   )
+births.01
 
 
 ###################################################
-### code chunk number 12: dplyr-s.rnw:178-183
+### code chunk number 12: dplyr-s.rnw:196-201
 ###################################################
 births.02 <-
   births.01 %>%
@@ -138,7 +139,7 @@ births.02 <-
 
 
 ###################################################
-### code chunk number 13: dplyr-s.rnw:190-196
+### code chunk number 13: dplyr-s.rnw:208-215
 ###################################################
 births.03 <-
   births.02 %>%
@@ -146,10 +147,11 @@ births.03 <-
     is.numeric,
     sum
   )
+births.03
 
 
 ###################################################
-### code chunk number 14: dplyr-s.rnw:200-204
+### code chunk number 14: dplyr-s.rnw:219-223
 ###################################################
 births.03 %>%
   rename_all(
@@ -158,7 +160,7 @@ births.03 %>%
 
 
 ###################################################
-### code chunk number 15: dplyr-s.rnw:208-215
+### code chunk number 15: dplyr-s.rnw:227-235
 ###################################################
 births.05 <-
   births_tbl %>%
@@ -167,10 +169,11 @@ births.05 <-
     count = n(),
     bweight.mean = mean(bweight)
   )
+births.05
 
 
 ###################################################
-### code chunk number 16: dplyr-s.rnw:220-232
+### code chunk number 16: dplyr-s.rnw:241-253
 ###################################################
 births.05 %>%
   summarise(
@@ -187,7 +190,7 @@ births_tbl %>%
 
 
 ###################################################
-### code chunk number 17: dplyr-s.rnw:242-248
+### code chunk number 17: dplyr-s.rnw:263-270
 ###################################################
 births.06 <-
   births_tbl %>%
@@ -195,10 +198,11 @@ births.06 <-
   summarise(
     count = n()
   )
+births.06
 
 
 ###################################################
-### code chunk number 18: dplyr-s.rnw:253-263
+### code chunk number 18: dplyr-s.rnw:275-285
 ###################################################
 births.06 %>%
   mutate(
@@ -213,7 +217,7 @@ births.06 %>%
 
 
 ###################################################
-### code chunk number 19: dplyr-s.rnw:273-279
+### code chunk number 19: dplyr-s.rnw:295-301
 ###################################################
 births_tbl %>%
   group_by(gest4) %>%
@@ -224,7 +228,7 @@ births_tbl %>%
 
 
 ###################################################
-### code chunk number 20: dplyr-s.rnw:286-301
+### code chunk number 20: dplyr-s.rnw:308-323
 ###################################################
 births_tbl %>%
   ## keep only the newborn with defined gesational time category
@@ -244,7 +248,7 @@ births_tbl %>%
 
 
 ###################################################
-### code chunk number 21: dplyr-s.rnw:305-318
+### code chunk number 21: dplyr-s.rnw:327-340
 ###################################################
 births_tbl %>%
   filter(
@@ -262,7 +266,53 @@ births_tbl %>%
 
 
 ###################################################
-### code chunk number 22: dplyr-s.rnw:328-359
+### code chunk number 22: dplyr-s.rnw:356-370
+###################################################
+age <-
+  tibble(
+    pid = 1:6,
+    age = sample(15:25, size = 6, replace = TRUE)
+  )
+
+center <-
+  tibble(
+    pid = c(1, 2, 3, 4, 10),
+    center = c('A', 'B', 'A', 'B', 'C')
+  )
+
+age
+center
+
+
+###################################################
+### code chunk number 23: dplyr-s.rnw:376-377
+###################################################
+bind_rows(age, center)
+
+
+###################################################
+### code chunk number 24: dplyr-s.rnw:387-393
+###################################################
+## all individuals from ages are kept
+left_join(age, center)
+## everithing is kept
+full_join(age, center)
+## only the individuals present in both dataset are kept
+inner_join(age, center)
+
+
+###################################################
+### code chunk number 25: dplyr-s.rnw:398-403
+###################################################
+inner_join(age, center) %>%
+  group_by(center) %>%
+  summarise(
+    mean_age = mean(age)
+  )
+
+
+###################################################
+### code chunk number 26: dplyr-s.rnw:413-444
 ###################################################
 if(!require(kableExtra)) install.packages('kableExtra')
 library(kableExtra)
@@ -298,7 +348,7 @@ births.08 %>%
 
 
 ###################################################
-### code chunk number 23: dplyr-s.rnw:362-368 (eval = FALSE)
+### code chunk number 27: dplyr-s.rnw:447-453 (eval = FALSE)
 ###################################################
 ## ## trick to create dplyr-s.rnw file.
 ## ## this part have to be lauch manually
