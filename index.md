@@ -4,6 +4,10 @@ title: Statistical Practice in Epidemiology using R.
 description: main page data
 ---
 
+# Softwares and packages installation intructions
+
+The softwares and packages required for course practicals installation intructions can be found   [here](https://github.com/SPE-R/SPE-R.github.io/blob/travis-build/prerequest.md)
+
 # SPE course material
 
 Latest version of 2019 SPE course data and material could be found here:
