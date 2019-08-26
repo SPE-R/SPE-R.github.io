@@ -5,6 +5,10 @@ description: Get the SPE course material and data
 toc: true
 ---
 
+## Softwares and packages installation intructions
+
+The softwares and packages required for course practicals installation intructions can be found  [here](https://github.com/SPE-R/SPE-R.github.io/blob/travis-build/prerequest.html) and/or   [here](https://github.com/SPE-R/SPE-R.github.io/blob/travis-build/prerequest.md)
+
 ## SPE course material
 
 Latest version of 2018 SPE course data and material could be found here:
