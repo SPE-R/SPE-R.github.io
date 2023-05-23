@@ -25,6 +25,8 @@ Latest version of 2023 SPE course data and material could be found here:
 
 ## Lectures
 
+**lectures PDFs** ([view](https://github.com/SPE-R/SPE/tree/gh-spe-material/lectures))
+
 **lectures slides handout** ([view](https://github.com/SPE-R/SPE/tree/gh-spe-material/SPE-2019-lectures-3x1.pdf) - 
   [download](https://github.com/SPE-R/SPE/raw/gh-spe-material/SPE-2019-lectures-3x1.pdf)): SPE lectures slides (3x1 layout)
   
