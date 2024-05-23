@@ -47,8 +47,13 @@ be familiar with basic R commands. In case of doubt, it is strongly recommended 
 
 **lectures PDFs** ([view](https://github.com/SPE-R/SPE/tree/gh-spe-material/lectures))
 
+<<<<<<< HEAD
 **lectures slides handout** ([view](https://github.com/SPE-R/SPE/tree/gh-spe-material/SPE-2024-lectures-3x1.pdf) - 
   [download](https://github.com/SPE-R/SPE/raw/gh-spe-material/SPE-2024-lectures-3x1.pdf)): SPE lectures slides (3x1 layout)
+=======
+**lectures slides handout** ([view](https://github.com/SPE-R/SPE/tree/gh-spe-material/SPE-2023-lectures-3x1.pdf) - 
+  [download](https://github.com/SPE-R/SPE/raw/gh-spe-material/SPE-2023-lectures-3x1.pdf)): SPE lectures slides (3x1 layout)
+>>>>>>> 445c48f551b4acb568e2e66b2c7f28768f4b0c28
   
 All the material could be downloaded as a single `.zip` file [here](https://github.com/SPE-R/SPE/raw/gh-spe-material/SPE-all-material.zip)
 
