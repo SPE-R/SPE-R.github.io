@@ -14,16 +14,16 @@ Latest version of 2024 SPE-R course in Lyon data and material could be found her
 
 ## Prerequests
 
-Before your venue, you should install `R`, a dedicated code editor and the list of packages requested for the course
+Before your arrival, you must install `R` and the list of packages requested for the course
 as described in [setup `R` and `RStudio` for SPE-R course with `renv`](https://github.com/SPE-R/SPE/blob/master/misc/SPE_setup.md).
 
-> Note 1: Using RStudio is optional, any R code editor should work. 
+> Note 1: Using RStudio is recommanded. 
 
-> Note 2: If you do not want to use `renv` package you could follow the following instrucitons to install packages with `install.packages` command [Installing SPE-R requested packages](https://github.com/SPE-R/SPE/blob/gh-spe-material/prerequest.knit.md)
+> Note 2: If you do not want to use `renv` package you could follow the following instructions to install packages with `install.packages` command [Installing SPE-R requested packages](https://github.com/SPE-R/SPE/blob/gh-spe-material/prerequest.knit.md)
 
-be familiar with basic R commands. In case of doubt, it is strongly recommended to read the following chapters (not done during the course):
+It is necessary to be familiar with basic R commands. If in doubt, it is strongly recommended to read the following chapters which are not covered in this course:
 
-  - [Practice with basic `R`]()https://spe-r.github.io/SPE/SPE-R-2024-practicals/practice-with-basic-r.html
+  - [Practice with basic `R`](https://spe-r.github.io/SPE/SPE-R-2024-practicals/practice-with-basic-r.html)
   - [Reading data into `R`](https://spe-r.github.io/SPE/SPE-R-2024-practicals/reading-data-into-r.html)
 
 ## Practicals
@@ -47,13 +47,8 @@ be familiar with basic R commands. In case of doubt, it is strongly recommended 
 
 **lectures PDFs** ([view](https://github.com/SPE-R/SPE/tree/gh-spe-material/lectures))
 
-<<<<<<< HEAD
 **lectures slides handout** ([view](https://github.com/SPE-R/SPE/tree/gh-spe-material/SPE-2024-lectures-3x1.pdf) - 
   [download](https://github.com/SPE-R/SPE/raw/gh-spe-material/SPE-2024-lectures-3x1.pdf)): SPE lectures slides (3x1 layout)
-=======
-**lectures slides handout** ([view](https://github.com/SPE-R/SPE/tree/gh-spe-material/SPE-2023-lectures-3x1.pdf) - 
-  [download](https://github.com/SPE-R/SPE/raw/gh-spe-material/SPE-2023-lectures-3x1.pdf)): SPE lectures slides (3x1 layout)
->>>>>>> 445c48f551b4acb568e2e66b2c7f28768f4b0c28
   
 All the material could be downloaded as a single `.zip` file [here](https://github.com/SPE-R/SPE/raw/gh-spe-material/SPE-all-material.zip)
 
