@@ -1,4 +1,4 @@
-site.title: Statistical Practice in Epidemiology using R.
-description: SPE-R material downloading web page
 markdown: kramdown
 theme: jekyll-theme-minimal
+title: Statistical Practice in Epidemiology using R.
+description: SPE-R material downloading web page
