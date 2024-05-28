@@ -12,14 +12,14 @@ Latest version of 2024 SPE-R course in Lyon data and material could be found her
 
 [3-7 June 2024 course timetable](https://github.com/SPE-R/SPE/blob/master/adm/SPE-R-timetable.md) 
 
-## Prerequests
+## Prerequisites
 
 Before your arrival, you must install `R` and the list of packages requested for the course
 as described in [setup `R` and `RStudio` for SPE-R course with `renv`](https://github.com/SPE-R/SPE/blob/master/misc/SPE_setup.md).
 
 > Note 1: Using RStudio is recommanded. 
 
-> Note 2: If you do not want to use `renv` package you could follow the following instructions to install packages with `install.packages` command [Installing SPE-R requested packages](https://github.com/SPE-R/SPE/blob/gh-spe-material/prerequest.knit.md)
+> Note 2: Install packages with `install.packages` instead of `renv` is also possible (see [Installing SPE-R packages](https://github.com/SPE-R/SPE/blob/gh-spe-material/prerequest.knit.md))
 
 It is necessary to be familiar with basic R commands. If in doubt, it is strongly recommended to read the following chapters which are not covered in this course:
 
