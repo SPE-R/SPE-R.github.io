@@ -6,11 +6,11 @@ description: main page data
 
 # SPE course material
 
-Latest version of 2024 SPE-R course in Lyon data and material could be found here:
+Latest version of 2026 SPE-R course in Tartu data and material could be found here:
 
 ## Timetable
 
-[3-7 June 2024 course timetable](https://github.com/SPE-R/SPE/blob/master/adm/SPE-R-timetable.md) 
+[1-5 June 2026 course timetable](https://github.com/SPE-R/SPE/blob/master/adm/SPE-R-timetable.md) 
 
 ## Prerequisites
 
@@ -23,18 +23,18 @@ as described in [setup `R` and `RStudio` for SPE-R course with `renv`](https://g
 
 It is necessary to be familiar with basic R commands. If in doubt, it is strongly recommended to read the following chapters which are not covered in this course:
 
-  - [Practice with basic `R`](https://spe-r.github.io/SPE/SPE-R-2024-practicals/practice-with-basic-r.html)
-  - [Reading data into `R`](https://spe-r.github.io/SPE/SPE-R-2024-practicals/reading-data-into-r.html)
+  - [Practice with basic `R`](https://spe-r.github.io/SPE/SPE-R-2026-practicals/practice-with-basic-r.html)
+  - [Reading data into `R`](https://spe-r.github.io/SPE/SPE-R-2026-practicals/reading-data-into-r.html)
 
 ## Practicals
 
-  - **practicals booklet** ([html](https://spe-r.github.io/SPE/SPE-R-2024-practicals/) - 
-  [pdf (view)](https://spe-r.github.io/SPE/SPE-R-2024-practicals/SPE-R-2024-practicals.pdf) - 
-  [pdf (download)](https://github.com/SPE-R/SPE/raw/gh-pages/SPE-R-2024-practicals/SPE-R-2024-practicals.pdf)): the book file that compile all the workshop practicals 
+  - **practicals booklet** ([html](https://spe-r.github.io/SPE/SPE-R-2026-practicals/) - 
+  [pdf (view)](https://spe-r.github.io/SPE/SPE-R-2026-practicals/SPE-R-2026-practicals.pdf) - 
+  [pdf (download)](https://github.com/SPE-R/SPE/raw/gh-pages/SPE-R-2026-practicals/SPE-R-2026-practicals.pdf)): the book file that compile all the workshop practicals 
 
-  - **practicals booklet with solutions** ([html](https://spe-r.github.io/SPE/SPE-R-2024-practicals-with-solutions/) - 
-  [pdf (view)](https://spe-r.github.io/SPE/SPE-R-2024-practicals-with-solutions/SPE-R-2024-practicals-with-solutions.pdf) -
-  [pdf (download)](https://github.com/SPE-R/SPE/raw/gh-pages/SPE-R-2024-practicals-with-solutions/SPE-R-2024-practicals-with-solutions.pdf)): the book file that compile all the workshop practicals and associated solutions
+  - **practicals booklet with solutions** ([html](https://spe-r.github.io/SPE/SPE-R-2026-practicals-with-solutions/) - 
+  [pdf (view)](https://spe-r.github.io/SPE/SPE-R-2026-practicals-with-solutions/SPE-R-2026-practicals-with-solutions.pdf) -
+  [pdf (download)](https://github.com/SPE-R/SPE/raw/gh-pages/SPE-R-2026-practicals-with-solutions/SPE-R-2026-practicals-with-solutions.pdf)): the book file that compile all the workshop practicals and associated solutions
 
   - **practicals data** ([view](https://github.com/SPE-R/SPE/tree/gh-spe-material/data) - 
   [download](https://github.com/SPE-R/SPE/raw/gh-spe-material/data.zip)): data and functions used in practicals
@@ -47,8 +47,8 @@ It is necessary to be familiar with basic R commands. If in doubt, it is strongl
 
 **lectures PDFs** ([view](https://github.com/SPE-R/SPE/tree/gh-spe-material/lectures))
 
-**lectures slides handout** ([view](https://github.com/SPE-R/SPE/tree/gh-spe-material/SPE-2024-lectures-3x1.pdf) - 
-  [download](https://github.com/SPE-R/SPE/raw/gh-spe-material/SPE-2024-lectures-3x1.pdf)): SPE lectures slides (3x1 layout)
+**lectures slides handout** ([view](https://github.com/SPE-R/SPE/tree/gh-spe-material/SPE-2026-lectures-3x1.pdf) - 
+  [download](https://github.com/SPE-R/SPE/raw/gh-spe-material/SPE-2026-lectures-3x1.pdf)): SPE lectures slides (3x1 layout)
   
 All the material could be downloaded as a single `.zip` file [here](https://github.com/SPE-R/SPE/raw/gh-spe-material/SPE-all-material.zip)
 
