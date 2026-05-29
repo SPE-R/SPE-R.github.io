@@ -15,9 +15,9 @@ Latest version of 2026 SPE-R course in Tartu data and material could be found he
 ## Prerequisites
 
 Before your arrival, you must install `R` and the list of packages requested for the course
-as described in [setup `R` and `RStudio` for SPE-R course with `renv`](https://github.com/SPE-R/SPE/blob/master/misc/SPE_setup.md).
+as described in the [SPE-R participant setup guide](https://github.com/SPE-R/SPE/blob/master/misc/SPE_participant_setup.md).
 
-> Note 1: Using RStudio is recommanded. 
+> Note 1: You can use either RStudio or Positron. RStudio is recommended if you are new to `R`. 
 
 > Note 2: Install packages with `install.packages` instead of `renv` is also possible (see [Installing SPE-R packages](https://github.com/SPE-R/SPE/blob/gh-spe-material/prerequest.knit.md))
 

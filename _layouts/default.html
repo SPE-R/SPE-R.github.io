@@ -52,5 +52,14 @@
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+    <script>
+      // Open all content links in a new tab (with safe rel attributes).
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("section a[href]").forEach(function (a) {
+          a.target = "_blank";
+          a.rel = "noopener noreferrer";
+        });
+      });
+    </script>
   </body>
 </html>
